@@ -14,11 +14,14 @@ function App() {
    cityinput= e.target.value;
    console.log(cityinput);
   }
+  const getdata=(value) => {
+  console.log("buton basildi");
+  }
   return (
     <div>
       <div className="search">
         <input type="text" placeholder="Search a City" onChange={citytext}/>
-        <button>Search</button>
+        <button onClick={() => getdata(cityinput)} >Search</button>
         
       </div>
       <Weatherresult/>
