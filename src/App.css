@@ -5,15 +5,14 @@
 }
 .search{
   min-height: 10vh;
-  min-width:90%;
+  min-width:30%;
   display: flex;
   justify-content: center;
   align-items: center;
   border-bottom: 1px solid rgba(0,0,0,0.2);
 }
 input, button{
-  padding:0.5rem 1rem;
-  margin-left: 10px;
-  font-size:1rem;
-  min-width:40%
+  padding: 0.5rem 1rem;
+  margin-left: 0.3rem;
+  font-size: 1rem;
 }
