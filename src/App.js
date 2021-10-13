@@ -3,10 +3,10 @@ import "./App.css";
 import Weatherresult from "./components/Weatherresult";
 
 
-const API_Key: "979bcb3167224872adb115058211210"; 
+ 
 
 function App() {
-  
+  const API_Key: "979bcb3167224872adb115058211210";  
   let cityinput ="";
   const [data, setData] = useState([]);
 
