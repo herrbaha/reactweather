@@ -11,13 +11,15 @@ function App() {
  
   let API_KEY = "979bcb3167224872adb115058211210"; 
 
-  let cityinput ="";
 
   const [wheatherData, setWheatherData] = useState([]);
+  const [inputValue, setInputValue] = useState("");
 
   const citytext = (e) => {
    e.preventDefault();
-   cityinput= e.target.value;
+  //  cityinput= e.target.value;
+  setInputValue(e.target.value);
+  
   }
 
   async function getdata(value) {
@@ -28,7 +30,11 @@ function App() {
   }
   const handleSubmit = (e) => {
    e.preventDefault();
-   getdata(citytext)
+   getdata(inputValue)
+   setInputValue("")
+   
+ 
+   
   }
   return (
     <div>
@@ -40,7 +46,7 @@ function App() {
       </div> */}
 
       <form onSubmit={handleSubmit}>
-      <input type="text" placeholder="Search a City" onChange={citytext}/>
+      <input type="text" placeholder="Search a City" value={inputValue} onChange={citytext}/>
       <button type="submit">Search</button>
 
       </form>
