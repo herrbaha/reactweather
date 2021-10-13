@@ -22,7 +22,7 @@ function App() {
   }
 
   async function getdata(value) {
-    const data = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${value}&days=3&aqi=no&alerts=no`)
+    const data = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${value}&days=7&aqi=no&alerts=no&lang=tr`)
     const result = await data.json();
     setWheatherData(result.forecast.forecastday);
     console.log(result.forecast.forecastday)
