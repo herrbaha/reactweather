@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+body{
+  background-color:teal;
+}
 .search{
   min-height: 10vh;
   min-width:30%;
