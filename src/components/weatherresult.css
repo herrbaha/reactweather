@@ -13,14 +13,4 @@
       border-bottom: 1px solid rgba(0,0,0,0.2);
       color:white;
   }
-  ul{
-      display: flex;
-      list-style: none;
-      width: 70%;
-      align-items: center;
-      justify-content: center;
-      
-  }
-  li{
-      margin: 5% 4%;
-  }
+ 
