@@ -6,17 +6,20 @@ import Weatherresult from "./components/Weatherresult";
  
 
 function App() {
-  const API_Key: "979bcb3167224872adb115058211210";  
-  let cityinput ="";
-  const [data, setData] = useState([]);
+  const APP_KEY: "979bcb3167224872adb115058211210" 
+
+  let cityinput =""
+  
+  const [wheatherData, setWheatherData] = useState([]);
 
   const citytext = (e) => {
    e.preventDefault();
    cityinput= e.target.value;
-  //  console.log(cityinput);
+   console.log(cityinput);
   }
+
   async function getdata(value) {
-    const data = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=${API_Key}&q=${value}&days=3&aqi=no&alerts=no`)
+    const data = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=${APP_KEY}&q=${value}&days=3&aqi=no&alerts=no`)
     const result = await data.json();
     console.log(result);
   }
