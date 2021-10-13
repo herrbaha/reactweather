@@ -26,10 +26,11 @@ function App() {
   //  console.log(cityinput);
   // }
 
-  async function getdata(value) {
-    const data = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=${APP_KEY}&q=${value}&days=3&aqi=no&alerts=no`)
+  async function getdata(value) 
+  {
+    const data = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=${APP_KEY}&q=${value}&days=3`)
     const result = await data.json();
-    console.log(result);
+    setWheatherData(result.forecast.forecastday)
   }
   return (
     <div>
@@ -38,7 +39,7 @@ function App() {
         <button onClick={() => getdata(cityinput)} >Search</button>
         
       </div>
-      {/* <Weatherresult/> */}
+      {wheatherData.map(item => (<Weatherresult/>))}
     </div>
   );
 }
