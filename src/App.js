@@ -1,4 +1,4 @@
-import { useState } from "react";
+// import { useState } from "react";
 import "./App.css";
 import Weatherresult from "./components/Weatherresult";
 // import {getDefaultNormalizer} from '@testing-library/react'
@@ -7,32 +7,26 @@ import Weatherresult from "./components/Weatherresult";
  
 
 function App() {
-  let APP_KEY: "979bcb3167224872adb115058211210";
+  let API_KEY = "03eca12fc063192fc55adf45336b2248";
+  let url = `http://api.openweathermap.org/data/2.5/weather?q=izmir&appid=${API_KEY}&units=metric&lang=de`;
 
-  let cityinput =""; 
 
-  const [wheatherData, setWheatherData] = useState([]);
-  
-  // function citytext(){
-  //   document.querySelector("input").addEventListener("input", (e) =>{
-  //     e.preventDefault();
-  //     cityinput = e.target.value;
-  //     console.log(cityinput)
-  //   })
-  // }
+  // let APP_KEY: "979bcb3167224872adb115058211210" 
+
+  let cityinput =""
+
+  // const [wheatherData, setWheatherData] = useState([]);
+
   const citytext = (e) => {
-  
    e.preventDefault();
    cityinput= e.target.value;
    console.log(cityinput);
   }
 
-  async function getdata(value) 
-  {
-    const data = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=${APP_KEY}&q=London&days=3`)
+  async function getdata(value) {
+    const data = await fetch(url)
     const result = await data.json();
-    setWheatherData(result.forecast)
-    console.log(result.forecast)
+    console.log(result);
   }
   return (
     <div>
@@ -41,7 +35,7 @@ function App() {
         <button onClick={() => getdata(cityinput)} >Search</button>
         
       </div>
-      {wheatherData.map(item => (<Weatherresult/>))}
+      <Weatherresult/>
     </div>
   );
 }
