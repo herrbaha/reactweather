@@ -5,22 +5,22 @@
   }
   .result{
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
       min-height: 10vh;
-      width: 80%;
+      width: 90%;
       margin: auto;
       align-items: center;
       border-bottom: 1px solid rgba(0,0,0,0.2);
-      /* background:url(StokSave.jpeg);
-      background-size:100% 220%; */
       color:white;
   }
   ul{
       display: flex;
       list-style: none;
-      width: 50%;
+      width: 70%;
+      align-items: center;
+      justify-content: center;
       
   }
   li{
-      margin:5%
+      margin: 5% 4%;
   }

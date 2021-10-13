@@ -1,14 +1,15 @@
 import React from 'react';
 import "./weatherresult.css";
 
-const Weatherresult = ({date, icon, minTemp, maxTemp, condition}) => {
+const Weatherresult = ({date, humidity, temp,icon, condition}) => {
     return (
        <div className="result">
           <h2>{date}</h2>
           <ul>
+              <li>{temp} C</li>
               <li><img src={icon} alt=""/></li>
               <li>{condition}</li>
-              <li>{minTemp} C / {maxTemp} C</li>
+              <li>{humidity}%</li>
           </ul> 
        </div>
     )

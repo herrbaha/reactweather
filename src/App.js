@@ -35,7 +35,7 @@ function App() {
         
       </div>
       {wheatherData.map((item, index) => (
-        <Weatherresult key={index} date={item.date} icon={item.day.condition.icon} minTemp={item.day.mintemp_c} maxTemp={item.day.maxtemp_c} condition={item.day.condition.text}/>
+        <Weatherresult key={index} date={item.date} icon={item.day.condition.icon} minTemp={item.day.mintemp_c} maxTemp={item.day.maxtemp_c} condition={item.day.condition.text} temp={item.day.avgtemp_c} humidity={item.day.avghumidity}/>
       ))}
     </div>
   );
