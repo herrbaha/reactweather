@@ -1,21 +1,19 @@
-// import { useState } from "react";
+import { useState } from "react";
 import "./App.css";
 import Weatherresult from "./components/Weatherresult";
-// import {getDefaultNormalizer} from '@testing-library/react'
+import {getDefaultNormalizer} from '@testing-library/react'
 
 
  
 
 function App() {
-  let API_KEY = "03eca12fc063192fc55adf45336b2248";
-  let url = `http://api.openweathermap.org/data/2.5/weather?q=izmir&appid=${API_KEY}&units=metric&lang=de`;
-
-
-  // let APP_KEY: "979bcb3167224872adb115058211210" 
+  
+ 
+  let API_KEY = "979bcb3167224872adb115058211210"; 
 
   let cityinput =""
 
-  // const [wheatherData, setWheatherData] = useState([]);
+  const [wheatherData, setWheatherData] = useState([]);
 
   const citytext = (e) => {
    e.preventDefault();
@@ -24,9 +22,10 @@ function App() {
   }
 
   async function getdata(value) {
-    const data = await fetch(url)
+    const data = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${value}&days=3&aqi=no&alerts=no`)
     const result = await data.json();
-    console.log(result);
+    setWheatherData(result.forecast.forecastday);
+    console.log(result.forecast.forecastday)
   }
   return (
     <div>
@@ -35,7 +34,9 @@ function App() {
         <button onClick={() => getdata(cityinput)} >Search</button>
         
       </div>
-      <Weatherresult/>
+      {wheatherData.map((item, index) => (
+        <Weatherresult key={index} date={item.date} icon={item.day.condition.icon} minTemp={item.day.mintemp_c} maxTemp={item.day.maxtemp_c} condition={item.day.condition.text}/>
+      ))}
     </div>
   );
 }
