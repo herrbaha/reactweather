@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import Weatherresult from "./components/Weatherresult";
-import {getDefaultNormalizer} from '@testing-library/react'
+// import {getDefaultNormalizer} from '@testing-library/react'
 
 
  
