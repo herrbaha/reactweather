@@ -25,7 +25,7 @@ function App() {
   }
 
   async function getdata(value) {
-    loading(true);
+    setLoading(true);
     try {
       const data = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${value}&days=3&aqi=no&alerts=no`)
     const result = await data.json();
@@ -63,13 +63,15 @@ function App() {
       <button type="submit">Search</button>
 
       </form>
-      {!loading && error ? <div>birseyler yanlis gitti</div> : (<div><h2>{cityName}'s last tree wheather Result </h2>       
+      {!loading && error ? <div>birseyler yanlis gitti</div> : (! loading ? (<div><h2>{cityName}'s last tree wheather Result </h2>       
 
 {wheatherData.map((item, index) => (
   <Weatherresult key={index} date={item.date} icon={item.day.condition.icon} condition={item.day.condition.text} temp={item.day.avgtemp_c} humidity={item.day.avghumidity}/>
 ))}
 
-</div>)}
+</div>) : (<div> sayfa ykleniyoooorrr </div>)
+
+)}
       {/* <h2>{cityName}'s last tree wheather Result </h2>       
 
       {wheatherData.map((item, index) => (
