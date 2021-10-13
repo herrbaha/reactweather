@@ -11,21 +11,19 @@ function App() {
  
   let API_KEY = "979bcb3167224872adb115058211210"; 
 
-  let cityinput =""
+  let cityinput ="";
 
   const [wheatherData, setWheatherData] = useState([]);
 
   const citytext = (e) => {
    e.preventDefault();
    cityinput= e.target.value;
-   console.log(cityinput);
   }
 
   async function getdata(value) {
     const data = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${value}&days=7&aqi=no&alerts=no`)
     const result = await data.json();
     setWheatherData(result.forecast.forecastday);
-    console.log(result.forecast.forecastday)
   }
   return (
     <div>
