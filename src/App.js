@@ -14,16 +14,11 @@ function App() {
   let cityinput ="";
 
   const [wheatherData, setWheatherData] = useState([]);
-  const [inputValue, setInputValue] = useState('');
 
-  const handleSubmit = (e) => {
+  const citytext = (e) => {
    e.preventDefault();
    cityinput= e.target.value;
-   setInputValue("");
   }
-  const handleChange = (e) => {
-    setInputValue(e.target.value)
-}
 
   async function getdata(value) {
     const data = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${value}&days=7&aqi=no&alerts=no`)
@@ -32,11 +27,11 @@ function App() {
   }
   return (
     <div>
-      <form onSubmit={handleSubmit} className="search">
-        <input type="text" placeholder="Search a City" value={inputValue} onChange={handleChange}/>
+      <div className="search">
+        <input type="text" placeholder="Search a City" onChange={citytext}/>
         <button onClick={() => getdata(cityinput)} >Search</button>
         
-      </form>
+      </div>
       {wheatherData.map((item, index) => (
         <Weatherresult key={index} date={item.date} icon={item.day.condition.icon} condition={item.day.condition.text} temp={item.day.avgtemp_c} humidity={item.day.avghumidity}/>
       ))}
