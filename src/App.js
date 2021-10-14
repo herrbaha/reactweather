@@ -56,7 +56,7 @@ function App() {
         <button type="submit">Search</button>
       </form>
       {!loading && error ? (
-        <div>something went wrong</div>
+        <div className="wrong">you misspelled or something went wrong...</div>
       ) : !loading ? (
         <div>
           <h2>{cityName} in the last three days </h2>
@@ -73,7 +73,7 @@ function App() {
           ))}
         </div>
       ) : (
-        <div className="loading"> loading...</div>
+        <h1 className="loading"> loading...</h1>
       )}
     </div>
   );
