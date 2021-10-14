@@ -6,6 +6,7 @@ import ReactLoading from 'react-loading';
 
 function App() {
   let API_KEY = "979bcb3167224872adb115058211210";
+  
 
   const [wheatherData, setWheatherData] = useState([]);
   const [inputValue, setInputValue] = useState("");
