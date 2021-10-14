@@ -1,5 +1,5 @@
 import React from 'react';
-import "./weatherresult.css";
+// import "./weatherresult.css";
 import { Container, Row, Col } from 'react-bootstrap';
 
 const Weatherresult = ({date, humidity, temp,icon, condition}) => {
