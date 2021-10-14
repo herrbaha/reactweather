@@ -58,18 +58,18 @@ function App() {
       </div> */}
 
       
-      <form onSubmit={handleSubmit}>
+      <form className="search" onSubmit={handleSubmit}>
       <input type="text" placeholder="Search a City" value={inputValue} onChange={citytext}/>
       <button type="submit">Search</button>
 
       </form>
-      {!loading && error ? <div>birseyler yanlis gitti</div> : (! loading ? (<div><h2>{cityName}'s last tree wheather Result </h2>       
+      {!loading && error ? <div>something went wrong</div> : (! loading ? (<div><h2>{cityName}{" "}in the last three days </h2>       
 
 {wheatherData.map((item, index) => (
   <Weatherresult key={index} date={item.date} icon={item.day.condition.icon} condition={item.day.condition.text} temp={item.day.avgtemp_c} humidity={item.day.avghumidity}/>
 ))}
 
-</div>) : (<div> sayfa ykleniyoooorrr </div>)
+</div>) : (<div className="loading"> loading...</div>)
 
 )}
       {/* <h2>{cityName}'s last tree wheather Result </h2>       
