@@ -59,7 +59,7 @@ function App() {
         <div>something went wrong</div>
       ) : !loading ? (
         <div>
-          <h2 className="items-center">{cityName} in the last three days </h2>
+          <h2 class="flex items-end">{cityName} in the last three days </h2>
 
           {wheatherData.map((item, index) => (
             <Weatherresult
