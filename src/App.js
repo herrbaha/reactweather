@@ -39,14 +39,7 @@ function App() {
   };
   return (
     <div>
-      {/* <div className="search">
-      
-        <input type="text" placeholder="Search a City" onChange={citytext}/>
-        <button onClick={() => getdata(cityinput)} >Search</button>
-    
-      </div> */}
-
-      <form className="search" onSubmit={handleSubmit}>
+     <form className="search" onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="Search a City"
