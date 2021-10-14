@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import Weatherresult from "./components/Weatherresult";
+import ReactLoading from 'react-loading';
 
 function App() {
   let API_KEY = "979bcb3167224872adb115058211210";
@@ -64,10 +65,8 @@ function App() {
               humidity={item.day.avghumidity}
             />
           ))}
-        </div>
-      ) : (
-        <h1 className="loading"> loading...</h1>
-      )}
+        </div>) : (<ReactLoading className="loading"  type="spinningBubbles" color="white" height={67} width={35} />)
+        }
     </div>
   );
 }
