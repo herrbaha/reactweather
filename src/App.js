@@ -65,7 +65,7 @@ function App() {
               humidity={item.day.avghumidity}
             />
           ))}
-        </div>) : (<ReactLoading className="loading"  type="spinningBubbles" color="white" height={67} width={35} />)
+        </div>) : (<ReactLoading style={{textAlign: 'center', olor: 'white', height:'2rem', width:'2rem'}}  type="spinningBubbles"  />)
         }
     </div>
   );
