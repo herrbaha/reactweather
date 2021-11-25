@@ -5,7 +5,7 @@ import ReactLoading from 'react-loading';
 
 
 function App() {
-const API_KEY = "979bcb3167224872adb115058211210";
+const API_KEY = process.env.REACT_APP_API_KEY;
   
 
   const [wheatherData, setWheatherData] = useState([]);
