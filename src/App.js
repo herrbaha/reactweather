@@ -5,7 +5,9 @@ import ReactLoading from 'react-loading';
 
 
 function App() {
- const weatherApi = process.env.REACT_APP_API_KEY;
+const API_KEY = process.env.REACT_APP_API_KEY
+//  let weatherApi = "979bcb3167224872adb115058211210";
+console.log(API_KEY)
   
 
   const [wheatherData, setWheatherData] = useState([]);
@@ -23,7 +25,7 @@ function App() {
     setLoading(true);
     try {
       const data = await fetch(
-        `http://api.weatherapi.com/v1/forecast.json?key=${weatherApi}&q=${value}&days=3&aqi=no&alerts=no`
+        `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${value}&days=3&aqi=no&alerts=no`
       );
       const result = await data.json();
       setWheatherData(result.forecast.forecastday);
