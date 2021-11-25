@@ -5,9 +5,7 @@ import ReactLoading from 'react-loading';
 
 
 function App() {
-const API_KEY = process.env.REACT_APP_API_KEY
-//  let weatherApi = "979bcb3167224872adb115058211210";
-console.log(API_KEY)
+const API_KEY = process.env.REACT_APP_API_KEY;
   
 
   const [wheatherData, setWheatherData] = useState([]);
