@@ -2,9 +2,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 body{
-  background-color:rgb (158, 106, 100);
+  background-color:rgb(130, 115, 120);
 }
 .search{
   min-height: 10vh;
