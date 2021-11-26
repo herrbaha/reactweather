@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 body{
-  background-color:teal;
+  background-color:rgb (158, 106, 100);
 }
 .search{
   min-height: 10vh;
