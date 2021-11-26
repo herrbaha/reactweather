@@ -23,7 +23,7 @@ const API_KEY = process.env.REACT_APP_API_KEY;
     setLoading(true);
     try {
       const data = await fetch(
-        `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${value}&days=3&aqi=no&alerts=no`
+        `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${value}&days=3&aqi=no&alerts=no`
       );
       const result = await data.json();
       setWheatherData(result.forecast.forecastday);
