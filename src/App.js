@@ -55,7 +55,7 @@ function App() {
         <div className="wrong">you misspelled or something went wrong...</div>
       ) : !loading ? (
         <div>
-          <h2>{cityName} next three three days </h2>
+          <h2>{cityName} next three days </h2>
 
           {wheatherData.map((item, index) => (
             <Weatherresult
