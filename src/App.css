@@ -50,6 +50,9 @@ h2{
   .weatherresult{
     font-size:0.7rem;
   }
+  .wrong{
+    font-size:0.7rem;
+  }
 }
 @media (max-width: 370px) {
   input {
@@ -61,6 +64,9 @@ h2{
     padding-left: 0.5rem;
   }
   .weatherresult{
+    font-size:0.5rem;
+  }
+  .wrong{
     font-size:0.5rem;
   }
 }
