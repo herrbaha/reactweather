@@ -5,7 +5,7 @@
   
 }
 body{
-  background-color:rgb(206, 115, 120);
+  background-color:rgb(42, 107, 128);
 }
 .search{
   min-height: 10vh;
@@ -37,4 +37,30 @@ h2{
   text-align: center;
   color: rgb(255, 217, 0);
   font-size: 2rem;
+}
+@media (max-width: 530px) {
+  input {
+    width: 50%;
+  }
+  button {
+    width: 20%;
+    /* font-size: 0.7rem; */
+    /* padding-left: 0.5rem; */
+  }
+  .weatherresult{
+    font-size:0.7rem;
+  }
+}
+@media (max-width: 370px) {
+  input {
+    width: 50%;
+  }
+  button {
+    width: 20%;
+    font-size: 0.7rem;
+    padding-left: 0.5rem;
+  }
+  .weatherresult{
+    font-size:0.5rem;
+  }
 }

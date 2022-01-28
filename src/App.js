@@ -54,7 +54,7 @@ function App() {
       {!loading && error ? (
         <div className="wrong">you misspelled or something went wrong...</div>
       ) : !loading ? (
-        <div>
+        <div className="weatherresult">
           <h2>{cityName} next three days </h2>
 
           {wheatherData.map((item, index) => (
@@ -65,6 +65,7 @@ function App() {
               condition={item.day.condition.text}
               temp={item.day.avgtemp_c}
               humidity={item.day.avghumidity}
+              
             />
           ))}
         </div>
